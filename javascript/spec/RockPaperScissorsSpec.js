@@ -5,24 +5,25 @@ describe("Rock-Paper-Scissors", function() {
 
     player1 = new Player('Sam');
     player2 = new Player('Tony');
-    player3 = new Computer('Tron');
+    computer = new Computer('Tron');
     game = new Game(player1, player2);
 
   });
 
   describe('computer', function() {
 
-    describe('when initialized', function() {
+    describe('when playing', function() {
 
       it('should make a random pick', function() {
-
-        expect(player3.pick).not.toBe(null);
+        computer.picks();
+        expect(computer.pick).not.toBe(null);
 
       });
 
     });
 
   });
+
 
   describe('winning and losing', function() {
 
