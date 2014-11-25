@@ -1,11 +1,26 @@
 describe("Rock-Paper-Scissors", function() {
-  var player1, player2, game;
+  var player1, player2, game, computer;
   
   beforeEach(function() {
 
     player1 = new Player('Sam');
     player2 = new Player('Tony');
+    player3 = new Computer('Tron');
     game = new Game(player1, player2);
+
+  });
+
+  describe('computer', function() {
+
+    describe('when initialized', function() {
+
+      it('should make a random pick', function() {
+
+        expect(player3.pick).not.toBe(null);
+
+      });
+
+    });
 
   });
 

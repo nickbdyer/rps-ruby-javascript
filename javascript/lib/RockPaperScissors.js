@@ -2,6 +2,25 @@ function Player(name) {
   this.name = name;
 };
 
+function Computer(name) {
+  this.name = name;
+  this.pick = this.picks
+};
+
+Computer.prototype.picks = function() {
+  var computerChoice = Math.random
+
+    if (computerChoice < 0.33) {
+  computerChoice = "rock";
+  }
+  else if (0.34 <= computerChoice <= 0.67) { 
+  computerChoice = "paper";
+  }
+  else { 
+  computerChoice = "scissors";
+  }
+  };
+
 Player.prototype.picks = function(pick) {
   this.pick = pick;
 };
