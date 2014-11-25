@@ -17,7 +17,6 @@ describe("Rock-Paper-Scissors", function() {
       it('should make a random pick', function() {
         computer.picks();
         expect(computer.pick).not.toBe(null);
-
       });
 
     });
@@ -26,6 +25,13 @@ describe("Rock-Paper-Scissors", function() {
 
 
   describe('winning and losing', function() {
+
+    it('a victory message should be displayed', function() {
+      player1.picks('lizard');
+      player2.picks('spock');
+      game.winner();
+      expect(game.victoryMessage()).toEqual("Sam's lizard poisons Tony's spock")
+    });
 
     describe('rock', function() {
 
@@ -200,7 +206,6 @@ describe("Rock-Paper-Scissors", function() {
       });
 
       it('should lose to rock', function() {
-
         player1.picks('lizard');
         player2.picks('rock');
         expect(game.winner()).toBe(player2);
@@ -209,7 +214,11 @@ describe("Rock-Paper-Scissors", function() {
 
     });
 
+
   });
+
+
+
 
   describe('draws', function() {
 

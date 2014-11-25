@@ -30,23 +30,29 @@ Game.prototype.pairs = {
   scissors: ['paper', 'lizard'],
   spock:    ['scissors', 'rock'],
   lizard:   ['spock', 'paper']
-}
+};
 
 
-Game.prototype.winner = function(player1, player2) {
-  
-
+Game.prototype.winner = function() {
   var player2pick = this.player2.pick;
   var player1beatsarray = this.pairs[this.player1.pick];
   var a = player1beatsarray.indexOf(player2pick)
-
-  if (this.samePick()) { return null }
+  if (this._samePick()) { return null }
   else if (a >= 0) { return this.player1 }
-
-
   else { return this.player2 } 
-}
+};
 
-Game.prototype.samePick = function() {
+Game.prototype.loser = function() {
+  if (this.winner() === this.player1)  { return this.player2 }
+  else { return this.player1 }
+};
+
+Game.prototype.victoryMessage = function() {
+  return this.winner().name+ "'s" + ' ' +  this.winner().pick+ ' ' + 'poisons ' +
+   this.loser().name + "'s" + ' ' + this.loser().pick
+};
+
+
+Game.prototype._samePick = function() {
   return this.player1.pick === this.player2.pick;
-}
+};
