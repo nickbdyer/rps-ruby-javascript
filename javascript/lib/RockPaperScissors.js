@@ -25,15 +25,25 @@ function Game(player1, player2) {
 };
 
 Game.prototype.pairs = {
-  rock: 'scissors', 
-  paper: 'rock',
-  scissors: 'paper'
+  rock:     ['scissors', 'lizard'], 
+  paper:    ['rock', 'spock'],
+  scissors: ['paper', 'lizard'],
+  spock:    ['scissors', 'rock'],
+  lizard:   ['spock', 'paper']
 }
 
 
 Game.prototype.winner = function(player1, player2) {
+  
+
+  var player2pick = this.player2.pick;
+  var player1beatsarray = this.pairs[this.player1.pick];
+  var a = player1beatsarray.indexOf(player2pick)
+
   if (this.samePick()) { return null }
-  else if (this.pairs[this.player1.pick] === this.player2.pick) { return this.player1 }
+  else if (a >= 0) { return this.player1 }
+
+
   else { return this.player2 } 
 }
 
