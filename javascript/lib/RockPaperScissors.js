@@ -55,7 +55,10 @@ Game.prototype._samePick = function() {
 };
 
 Game.prototype.victoryMessage = function() {
-  return this.winner().name + "'s" + " " + this.winner().pick + " " + this.verb() + " " + this.loser().name + '\'s' + " " + this.loser().pick
+  if (this._samePick()) {return "Draw"}
+    else {
+  return this.winner().name + "'s" + " " + this.winner().pick + " " + this.verb() + " " +
+   this.loser().name + '\'s' + " " + this.loser().pick }
 };
 
 Game.prototype.verb = function() {
