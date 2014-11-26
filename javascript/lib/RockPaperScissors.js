@@ -46,7 +46,9 @@ Game.prototype._samePick = function() {
   return this.player1.pick === this.player2.pick;
 };
 
+Game.prototype.victoryMessage = function() {
 
+};
 
 
 
