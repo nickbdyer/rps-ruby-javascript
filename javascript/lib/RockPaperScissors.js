@@ -3,7 +3,7 @@ function Computer(name) {
 };
 
 Computer.prototype.picks = function() {
-  var choices = ['rock', 'paper', 'scissors']
+  var choices = ['rock', 'paper', 'scissors', 'lizard', 'spock']
   this.pick = choices[Math.floor(Math.random() * choices.length)];
 };
 
