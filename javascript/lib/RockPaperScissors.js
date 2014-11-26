@@ -50,15 +50,25 @@ Game.prototype.loser = function() {
   };
 };
 
-
 Game.prototype._samePick = function() {
   return this.player1.pick === this.player2.pick;
 };
 
 Game.prototype.victoryMessage = function() {
-  return this.winner().name + "'s" + " " + this.winner().pick + " " + "verb" + " " + this.loser().name + '\'s' + " " + this.loser().pick
+  return this.winner().name + "'s" + " " + this.winner().pick + " " + this.verb() + " " + this.loser().name + '\'s' + " " + this.loser().pick
 };
 
+Game.prototype.verb = function() {
+  return this._verbsHash[this.winner().pick][this.loser().pick]
+}
+
+Game.prototype._verbsHash = {
+  rock:     {'scissors' : 'crushes', 'lizard' : 'crushes'}, 
+  paper:    {'rock' : 'covers', 'spock' : 'disproves'},
+  scissors: {'paper' : 'cuts', 'lizard' : 'decapitates'},
+  spock:    {'scissors' : 'smashes', 'rock' : 'vapourises'},
+  lizard:   {'spock' : 'poisons', 'paper' : 'eats'}
+};
 
 
 
