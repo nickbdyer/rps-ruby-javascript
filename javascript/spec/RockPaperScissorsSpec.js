@@ -57,7 +57,7 @@ describe("Rock-Paper-Scissors", function() {
       it('should lose to paper', function() {
         player1.picks('rock');
         player2.picks('paper');
-        expect(game.winner()).toBe(player2);
+        expect(game.loser()).toBe(player1);
       });
 
       it('with a victory message', function() {
@@ -69,7 +69,7 @@ describe("Rock-Paper-Scissors", function() {
       it('should lose to spock', function() {
         player1.picks('rock');
         player2.picks('spock');
-        expect(game.winner()).toBe(player2);
+        expect(game.loser()).toBe(player1);
       });
 
       it('with a victory message', function() {
@@ -109,7 +109,7 @@ describe("Rock-Paper-Scissors", function() {
       it('should lose to scissors', function() {
         player1.picks('paper');
         player2.picks('scissors');
-        expect(game.winner()).toBe(player2);
+        expect(game.loser()).toBe(player1);
       });
 
       it('with a victory message', function() {
@@ -121,7 +121,7 @@ describe("Rock-Paper-Scissors", function() {
       it('should lose to lizard', function() {
         player1.picks('paper');
         player2.picks('lizard');
-        expect(game.winner()).toBe(player2);
+        expect(game.loser()).toBe(player1);
       });
 
       it('with a victory message', function() {
@@ -162,7 +162,7 @@ describe("Rock-Paper-Scissors", function() {
       it('should lose to rock', function() {
         player1.picks('scissors');
         player2.picks('rock');
-        expect(game.winner()).toBe(player2);
+        expect(game.loser()).toBe(player1);
       });
 
       it('with a victory message', function() {
@@ -174,7 +174,7 @@ describe("Rock-Paper-Scissors", function() {
       it('should lose to spock', function() {
         player1.picks('scissors');
         player2.picks('spock');
-        expect(game.winner()).toBe(player2);
+        expect(game.loser()).toBe(player1);
       });
 
       it('with a victory message', function() {
@@ -215,7 +215,7 @@ describe("Rock-Paper-Scissors", function() {
       it('should lose to lizard', function() {
         player1.picks('spock');
         player2.picks('lizard');
-        expect(game.winner()).toBe(player2);
+        expect(game.loser()).toBe(player1);
       });
 
       it('with a victory message', function() {
@@ -227,7 +227,7 @@ describe("Rock-Paper-Scissors", function() {
       it('should lose to paper', function() {
         player1.picks('spock');
         player2.picks('paper');
-        expect(game.winner()).toBe(player2);
+        expect(game.loser()).toBe(player1);
       });
 
       it('with a victory message', function() {
@@ -267,7 +267,7 @@ describe("Rock-Paper-Scissors", function() {
       it('should lose to scissors', function() {
         player1.picks('lizard');
         player2.picks('scissors');
-        expect(game.winner()).toBe(player2);
+        expect(game.loser()).toBe(player1);
       });
 
       it('with a victory message', function() {
@@ -279,7 +279,7 @@ describe("Rock-Paper-Scissors", function() {
       it('should lose to rock', function() {
         player1.picks('lizard');
         player2.picks('rock');
-        expect(game.winner()).toBe(player2);
+        expect(game.loser()).toBe(player1);
       });
 
       it('with a victory message', function() {

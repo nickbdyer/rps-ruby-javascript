@@ -41,13 +41,22 @@ Game.prototype.winner = function() {
   else { return this.player2 } 
 };
 
+Game.prototype.loser = function() {
+  if (this.winner() === this.player1 ){
+    return this.player2;
+  }
+  else {
+    return this.player1;
+  };
+};
+
 
 Game.prototype._samePick = function() {
   return this.player1.pick === this.player2.pick;
 };
 
 Game.prototype.victoryMessage = function() {
-
+  return this.winner().name + "'s" + " " + this.winner().pick + " " + "verb" + " " + this.loser().name + '\'s' + " " + this.loser().pick
 };
 
 
