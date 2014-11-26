@@ -58,7 +58,7 @@ Game.prototype.victoryMessage = function() {
   if (this._samePick()) {return "Draw"}
     else {
   return this.winner().name + "'s" + " " + this.winner().pick + " " + this.verb() + " " +
-   this.loser().name + '\'s' + " " + this.loser().pick }
+   this.loser().name + '\'s' + " " + this.loser().pick + ", " + this.winner().name + " wins!"} 
 };
 
 Game.prototype.verb = function() {

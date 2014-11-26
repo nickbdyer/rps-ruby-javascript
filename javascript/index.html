@@ -12,12 +12,15 @@
       width: 15%;
       margin-right: 2.5%;
       cursor: pointer;
-      opacity: 0.5;
+      opacity: 1;
       transition: 1s all ease;
     }
 
     .choices img:hover {
-      opacity: 1;
+    background-color: rgba(15, 15, 15, 0.6);
+    color: #fff;
+    text-shadow: #000 0px 0px 20px;
+    opacity: 0.5
     }
 
     h2, h3 {
@@ -36,7 +39,10 @@
       padding: 5px;
       width: 80%;
       margin-bottom: 10px;
+      display:none;
     }
+
+
     </style>
   </head>
   <body>
@@ -51,19 +57,22 @@
     <ul id="results">
     </ul>
 
-
     <script src='lib/RockPaperScissors.js'></script>
     <script src='http://code.jquery.com/jquery-2.1.1.min.js'></script>
     <script>
       $(document).ready(function() {
         var ben = new Player('Ben');
         var nick = new Player('Nick');
-        var game = new Game(ben, nick);
+        var tron = new Computer('Tron')
+        var game = new Game(ben, tron);
         $('.choices img').on('click', function() {
           ben.picks($(this).data('pick'));
-          nick.picks('rock');
-          $('#results').prepend('<li>' + game.victoryMessage() + '</li>');
-        })
+          tron.picks();
+          $('<li>' + game.victoryMessage() + '</li>').prependTo('#results').fadeIn();
+          $('li:nth-child(5)').fadeOut(3000,function(){
+          $(this).remove();
+          });
+        });
 
       })
 
