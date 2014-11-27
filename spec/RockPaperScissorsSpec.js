@@ -23,6 +23,26 @@ describe("Rock-Paper-Scissors", function() {
 
   });
 
+  describe('counting', function() {
+
+    it('should register a win for the winning player', function() {
+      player1.picks('rock');
+      player2.picks('scissors');
+      expect(game.winner()).toBe(player1);
+      expect(player1.winCount).toEqual(1);
+    });
+
+    it('should register a win for the winning player', function() {
+      player1.picks('rock');
+      player2.picks('spock');
+      expect(game.winner()).toBe(player2);
+      expect(player2.winCount).toEqual(1);
+    });
+
+
+
+  });
+
 
   describe('winning and losing', function() {
 

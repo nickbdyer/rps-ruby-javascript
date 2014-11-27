@@ -1,5 +1,6 @@
 function Computer(name) {
   this.name = name;
+  this.winCount = 0;
 };
 
 Computer.prototype.picks = function() {
@@ -7,14 +8,22 @@ Computer.prototype.picks = function() {
   this.pick = choices[Math.floor(Math.random() * choices.length)];
 };
 
+Computer.prototype.wins = function() {
+  this.winCount++ ;
+};
 
 function Player(name) {
   this.name = name;
+  this.winCount = 0;
 };
 
 
 Player.prototype.picks = function(pick) {
   this.pick = pick;
+};
+
+Player.prototype.wins = function() {
+  this.winCount++ ;
 };
 
 
@@ -37,9 +46,14 @@ Game.prototype.winner = function() {
   var player1beatsarray = this.pairs[this.player1.pick];
   var a = player1beatsarray.indexOf(player2pick)
   if (this._samePick()) { return null }
-  else if (a >= 0) { return this.player1 }
-  else { return this.player2 } 
+  else if (a >= 0) { 
+    this.player1.wins();
+    return this.player1;
+  } else { 
+    this.player2.wins();  
+    return this.player2;} 
 };
+
 
 Game.prototype.loser = function() {
   if (this.winner() === this.player1 ){
@@ -60,6 +74,10 @@ Game.prototype.victoryMessage = function() {
   return this.winner().name + "'s" + " " + this.winner().pick + " " + this.verb() + " " +
    this.loser().name + '\'s' + " " + this.loser().pick + ", " + this.winner().name + " wins!"} 
 };
+
+Game.prototype.countMessage = function() {
+  return this.player1.name + ': ' + this.player1.winCount + "       " + this.player2.name + ': ' + this.player2.winCount;
+}
 
 Game.prototype.verb = function() {
   return this._verbsHash[this.winner().pick][this.loser().pick]
