@@ -49,7 +49,7 @@ Game.prototype.evaluateWinner = function() {
   else if (a >= 0) { 
     this.player1.wins();
     this.winner = this.player1;
-    
+
   } else { 
     this.player2.wins();  
     this.winner = this.player2;} 
@@ -78,7 +78,7 @@ Game.prototype.victoryMessage = function() {
 };
 
 Game.prototype.countMessage = function() {
-  return this.player1.name + ': ' + this.player1.winCount + "       " + this.player2.name + ': ' + this.player2.winCount;
+  return this.player1.name + ': ' + this.player1.winCount + " " + " " + this.player2.name + ': ' + this.player2.winCount;
 }
 
 Game.prototype.verb = function() {
