@@ -38,7 +38,7 @@ describe("Rock-Paper-Scissors", function() {
       it('with a victory message', function() {
         player1.picks('rock');
         player2.picks('scissors');
-        expect(game.victoryMessage()).toEqual("Sam's rock crushes Tony's scissors")
+        expect(game.victoryMessage()).toEqual("Sam's rock crushes Tony's scissors, Sam wins!")
       });
 
       it('should beat lizard', function() {
@@ -51,7 +51,7 @@ describe("Rock-Paper-Scissors", function() {
       it('with a victory message', function() {
         player1.picks('rock');
         player2.picks('lizard');
-        expect(game.victoryMessage()).toEqual("Sam's rock crushes Tony's lizard")
+        expect(game.victoryMessage()).toEqual("Sam's rock crushes Tony's lizard, Sam wins!")
       });
 
       it('should lose to paper', function() {
@@ -63,7 +63,7 @@ describe("Rock-Paper-Scissors", function() {
       it('with a victory message', function() {
         player1.picks('rock');
         player2.picks('paper');
-        expect(game.victoryMessage()).toEqual("Tony's paper covers Sam's rock")
+        expect(game.victoryMessage()).toEqual("Tony's paper covers Sam's rock, Tony wins!")
       });
 
       it('should lose to spock', function() {
@@ -75,7 +75,7 @@ describe("Rock-Paper-Scissors", function() {
       it('with a victory message', function() {
         player1.picks('rock');
         player2.picks('spock');
-        expect(game.victoryMessage()).toEqual("Tony's spock vapourises Sam's rock")
+        expect(game.victoryMessage()).toEqual("Tony's spock vapourises Sam's rock, Tony wins!")
       });
 
     });
@@ -91,7 +91,7 @@ describe("Rock-Paper-Scissors", function() {
       it('with a victory message', function() {
         player1.picks('paper');
         player2.picks('rock');
-        expect(game.victoryMessage()).toEqual("Sam's paper covers Tony's rock")
+        expect(game.victoryMessage()).toEqual("Sam's paper covers Tony's rock, Sam wins!")
       });
 
       it('should beat spock', function() {
@@ -103,7 +103,7 @@ describe("Rock-Paper-Scissors", function() {
       it('with a victory message', function() {
         player1.picks('paper');
         player2.picks('spock');
-        expect(game.victoryMessage()).toEqual("Sam's paper disproves Tony's spock")
+        expect(game.victoryMessage()).toEqual("Sam's paper disproves Tony's spock, Sam wins!")
       });
 
       it('should lose to scissors', function() {
@@ -115,7 +115,7 @@ describe("Rock-Paper-Scissors", function() {
       it('with a victory message', function() {
         player1.picks('paper');
         player2.picks('scissors');
-        expect(game.victoryMessage()).toEqual("Tony's scissors cuts Sam's paper")
+        expect(game.victoryMessage()).toEqual("Tony's scissors cuts Sam's paper, Tony wins!")
       });
 
       it('should lose to lizard', function() {
@@ -127,7 +127,7 @@ describe("Rock-Paper-Scissors", function() {
       it('with a victory message', function() {
         player1.picks('paper');
         player2.picks('lizard');
-        expect(game.victoryMessage()).toEqual("Tony's lizard eats Sam's paper")
+        expect(game.victoryMessage()).toEqual("Tony's lizard eats Sam's paper, Tony wins!")
       });
       
 
@@ -144,7 +144,7 @@ describe("Rock-Paper-Scissors", function() {
       it('with a victory message', function() {
         player1.picks('scissors');
         player2.picks('paper');
-        expect(game.victoryMessage()).toEqual("Sam's scissors cuts Tony's paper")
+        expect(game.victoryMessage()).toEqual("Sam's scissors cuts Tony's paper, Sam wins!")
       });
 
       it('should beat lizard', function() {
@@ -156,7 +156,7 @@ describe("Rock-Paper-Scissors", function() {
       it('with a victory message', function() {
         player1.picks('scissors');
         player2.picks('lizard');
-        expect(game.victoryMessage()).toEqual("Sam's scissors decapitates Tony's lizard")
+        expect(game.victoryMessage()).toEqual("Sam's scissors decapitates Tony's lizard, Sam wins!")
       });
 
       it('should lose to rock', function() {
@@ -168,7 +168,7 @@ describe("Rock-Paper-Scissors", function() {
       it('with a victory message', function() {
         player1.picks('scissors');
         player2.picks('rock');
-        expect(game.victoryMessage()).toEqual("Tony's rock crushes Sam's scissors")
+        expect(game.victoryMessage()).toEqual("Tony's rock crushes Sam's scissors, Tony wins!")
       });
 
       it('should lose to spock', function() {
@@ -180,7 +180,7 @@ describe("Rock-Paper-Scissors", function() {
       it('with a victory message', function() {
         player1.picks('scissors');
         player2.picks('spock');
-        expect(game.victoryMessage()).toEqual("Tony's spock smashes Sam's scissors")
+        expect(game.victoryMessage()).toEqual("Tony's spock smashes Sam's scissors, Tony wins!")
       });
       
 
@@ -197,7 +197,7 @@ describe("Rock-Paper-Scissors", function() {
       it('with a victory message', function() {
         player1.picks('spock');
         player2.picks('rock');
-        expect(game.victoryMessage()).toEqual("Sam's spock vapourises Tony's rock")
+        expect(game.victoryMessage()).toEqual("Sam's spock vapourises Tony's rock, Sam wins!")
       });
 
       it('should beat scissors', function() {
@@ -209,7 +209,7 @@ describe("Rock-Paper-Scissors", function() {
       it('with a victory message', function() {
         player1.picks('spock');
         player2.picks('scissors');
-        expect(game.victoryMessage()).toEqual("Sam's spock smashes Tony's scissors")
+        expect(game.victoryMessage()).toEqual("Sam's spock smashes Tony's scissors, Sam wins!")
       });
       
       it('should lose to lizard', function() {
@@ -221,7 +221,7 @@ describe("Rock-Paper-Scissors", function() {
       it('with a victory message', function() {
         player1.picks('spock');
         player2.picks('lizard');
-        expect(game.victoryMessage()).toEqual("Tony's lizard poisons Sam's spock")
+        expect(game.victoryMessage()).toEqual("Tony's lizard poisons Sam's spock, Tony wins!")
       });
 
       it('should lose to paper', function() {
@@ -233,7 +233,7 @@ describe("Rock-Paper-Scissors", function() {
       it('with a victory message', function() {
         player1.picks('spock');
         player2.picks('paper');
-        expect(game.victoryMessage()).toEqual("Tony's paper disproves Sam's spock")
+        expect(game.victoryMessage()).toEqual("Tony's paper disproves Sam's spock, Tony wins!")
       });
 
     });
@@ -249,7 +249,7 @@ describe("Rock-Paper-Scissors", function() {
       it('with a victory message', function() {
         player1.picks('lizard');
         player2.picks('spock');
-        expect(game.victoryMessage()).toEqual("Sam's lizard poisons Tony's spock")
+        expect(game.victoryMessage()).toEqual("Sam's lizard poisons Tony's spock, Sam wins!")
       });
 
       it('should beat paper', function() {
@@ -261,7 +261,7 @@ describe("Rock-Paper-Scissors", function() {
       it('with a victory message', function() {
         player1.picks('lizard');
         player2.picks('paper');
-        expect(game.victoryMessage()).toEqual("Sam's lizard eats Tony's paper")
+        expect(game.victoryMessage()).toEqual("Sam's lizard eats Tony's paper, Sam wins!")
       });
 
       it('should lose to scissors', function() {
@@ -273,7 +273,7 @@ describe("Rock-Paper-Scissors", function() {
       it('with a victory message', function() {
         player1.picks('lizard');
         player2.picks('scissors');
-        expect(game.victoryMessage()).toEqual("Tony's scissors decapitates Sam's lizard")
+        expect(game.victoryMessage()).toEqual("Tony's scissors decapitates Sam's lizard, Tony wins!")
       });
 
       it('should lose to rock', function() {
@@ -285,7 +285,7 @@ describe("Rock-Paper-Scissors", function() {
       it('with a victory message', function() {
         player1.picks('lizard');
         player2.picks('rock');
-        expect(game.victoryMessage()).toEqual("Tony's rock crushes Sam's lizard")
+        expect(game.victoryMessage()).toEqual("Tony's rock crushes Sam's lizard, Tony wins!")
       });
 
     });
