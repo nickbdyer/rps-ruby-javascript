@@ -129,21 +129,39 @@
       </ul>
     </section>
 
+    <template id='list-item-template'>
+      <li>{{ message }}</li>
+    </template>
+
     <script src='lib/RockPaperScissors.js'></script>
-    <script src='http://code.jquery.com/jquery-2.1.1.min.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js'></script>
+    <script src='http://code.jquery.com/jquery-2.1.1.min.js'>
+    </script>
     <script>
+
       $(document).ready(function() {
+        var remove = function() {
+          $(this).remove();
+        };
+
+        var render = function(game){
+          var html = $('#list-item-template').html();
+          var data = {message: game.victoryMessage()};
+          return Mustache.render(html, data);
+        }
+
         var ben = new Player('Ben');
         var nick = new Player('Nick');
         var tron = new Computer('Tron')
         var game = new Game(ben, tron);
+
+
         $('.choices span').on('click', function() {
           ben.picks($(this).data('pick'));
           tron.picks();
-          $('<li>' + game.victoryMessage() + '</li>').prependTo('#results').fadeIn();
-          $('li:nth-child(5)').fadeOut(3000,function(){
-          $(this).remove();
-          });
+          
+          $(render(game)).prependTo('#results').slideDown();
+          $('li:nth-child(5)').fadeOut(3000,remove);
         });
 
         $('.choices').mouseenter(function(e) {
