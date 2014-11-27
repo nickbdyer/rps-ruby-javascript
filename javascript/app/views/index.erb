@@ -1,0 +1,54 @@
+<!doctype>
+<html>
+<center>
+  <head>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'> 
+    <link href='css/rps.css' rel='stylesheet' type='text/css'>
+
+    <title>Rock Paper Scissors Lizard Spock</title>
+
+  </head>
+  <body>
+    <h1>Rock Paper Scissors Lizard Spock</h1>
+    <section class="circlescontainer">
+      <section class="circles">
+        <section class='choices'>
+          <span class="dark-background" data-pick='rock'>ROCK</span>
+          <img src="images/rock.png" >
+        </section>
+        <section class='choices'>   
+          <span class="dark-background" data-pick='paper'>PAPER</span>
+          <img src="images/paper.png" >
+        </section>
+        <section class='choices'> 
+          <span class="dark-background" data-pick='scissors'>SCISSORS</span>
+          <img src="images/scissors.png" >
+        </section>
+        <section class='choices'>  
+          <span class="dark-background" data-pick='lizard'>LIZARD</span>
+          <img src="images/lizard.png" >
+        </section>
+        <section class='choices'>
+          <span class="dark-background" data-pick='spock'>SPOCK</span>
+          <img src="images/spock.png" >
+        </section>
+      </section>
+    </section>
+
+    <section class="centeredresults">
+      <ul id="results">
+      </ul>
+    </section>
+
+    <template id='list-item-template'>
+      <li>{{ message }}</li>
+    </template>
+
+    <script src='/javascripts/RockPaperScissors.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js'></script>
+    <script src='http://code.jquery.com/jquery-2.1.1.min.js'></script>
+    <script src='/javascripts/app.js'></script>
+
+
+  </body>
+</html>
