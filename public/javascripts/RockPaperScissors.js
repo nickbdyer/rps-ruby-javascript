@@ -41,22 +41,23 @@ Game.prototype.pairs = {
 };
 
 
-Game.prototype.winner = function() {
+Game.prototype.evaluateWinner = function() {
   var player2pick = this.player2.pick;
   var player1beatsarray = this.pairs[this.player1.pick];
   var a = player1beatsarray.indexOf(player2pick)
   if (this._samePick()) { return null }
   else if (a >= 0) { 
     this.player1.wins();
-    return this.player1;
+    this.winner = this.player1;
+    
   } else { 
     this.player2.wins();  
-    return this.player2;} 
+    this.winner = this.player2;} 
 };
 
 
 Game.prototype.loser = function() {
-  if (this.winner() === this.player1 ){
+  if (this.winner === this.player1 ){
     return this.player2;
   }
   else {
@@ -70,9 +71,10 @@ Game.prototype._samePick = function() {
 
 Game.prototype.victoryMessage = function() {
   if (this._samePick()) {return "Draw"}
-    else {
-  return this.winner().name + "'s" + " " + this.winner().pick + " " + this.verb() + " " +
-   this.loser().name + '\'s' + " " + this.loser().pick + ", " + this.winner().name + " wins!"} 
+    else { 
+      this.evaluateWinner();
+  return this.winner.name + "'s" + " " + this.winner.pick + " " + this.verb() + " " +
+   this.loser().name + '\'s' + " " + this.loser().pick + ", " + this.winner.name + " wins!"} 
 };
 
 Game.prototype.countMessage = function() {
@@ -80,7 +82,7 @@ Game.prototype.countMessage = function() {
 }
 
 Game.prototype.verb = function() {
-  return this._verbsHash[this.winner().pick][this.loser().pick]
+  return this._verbsHash[this.winner.pick][this.loser().pick]
 }
 
 Game.prototype._verbsHash = {
