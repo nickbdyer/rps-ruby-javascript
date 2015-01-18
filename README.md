@@ -28,8 +28,9 @@ Lastly we published to Heroku after a lot of snags and failed uploads. Heroku ca
    
 The end result:
    
-![jpg](https://cloud.githubusercontent.com/assets/9297921/5603402/ed0c85c2-937b-11e4-8cf9-9839bc1f1795.jpeg)
-   
+![alt text](images/RPSJS.png
+"Rock Paper Scissors Lizard Spock")
+
 ####Lessons Learned
     
 FizzBuzz was about as much Javascript as I had done *before* this challenge, so this was definately an immersive exercise. 
