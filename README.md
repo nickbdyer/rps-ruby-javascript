@@ -10,7 +10,7 @@
     
 ###Briefing
    
-Write a Rock Paper Scissors App in Javascript. My pair partner was [Nick Dyer](https://github.com/nickbdyer) - an absolute gentleman and a joy to work with. 
+Write a Rock Paper Scissors App in Javascript. My pair partner was [Ben Conway](https://github.com/Benc93) - a great pair partner who pushed me to follow procedure which was very helpful. 
    
 We had already built a similar app in Ruby as part of a previous Weekend Challenge - now it was time to try the same App in a new language - Javascript. 
    
