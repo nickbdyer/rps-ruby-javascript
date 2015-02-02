@@ -1,4 +1,6 @@
 #Makers Academy Week 5 Project - Rock Paper Scissors (Written in Javascript)  
+
+[![Code Climate](https://codeclimate.com/github/nickbdyer/rps-ruby-javascript/badges/gpa.svg)](https://codeclimate.com/github/nickbdyer/rps-ruby-javascript)
    
 ###New Programs, Languages, Technologies employed.  
     
